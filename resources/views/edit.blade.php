@@ -20,6 +20,12 @@
       <input type="text" class="form-control @error('alamat')
       is-invalid @enderror" name="alamat" value="{{$data->alamat}}">
     </div>
+    <label class="form-label">Sekolah</label>
+    <select class="form-control form-select-lg mb-3" aria-label="Large select example" name="sekolah_id">
+      @foreach ($sekolah as $item)  
+        <option value="{{$item->id}}" @selected($data->sekolah_id == $item->id)>{{$item->nama_sekolah}}</option>
+      @endforeach
+    </select>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>    
 @endsection

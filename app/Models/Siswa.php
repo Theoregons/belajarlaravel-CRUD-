@@ -10,6 +10,10 @@ class Siswa extends Model
     use HasFactory;
     protected $table = 'siswa';
     protected $guarded = ['id'];
+
+    function sekolah() {
+        return $this->belongsTo(Sekolah::class);
+    }
     
     // protected $primarykey = 'id_siswa';
     // protected $fillable = [
